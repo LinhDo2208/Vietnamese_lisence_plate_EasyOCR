@@ -10,12 +10,12 @@ anh/video --> plate_detector.py (tim khung) --> plate_reader.py (doc chu + bo ph
 
 ```
 du_an/
-├── main.py                # file chay chinh
-├── plate_detector.py      # phat hien bien so (YOLOv8)
-├── plate_reader.py        # doc bien so (EasyOCR) + theo doi/bo phieu
-├── setup_model.py         # cai model OCR vao EasyOCR (chay 1 lan)
-├── best.pt                # model YOLOv8 phat hien bien so (cua ban)
-└── best_accuracy.pth      # model OCR sau khi train
+├── main.py                                  # file chay chinh
+├── plate_detector.py                        # phat hien bien so (YOLOv8)
+├── plate_reader.py                          # doc bien so (EasyOCR) + theo doi/bo phieu
+├── setup_model.py                           # cai model OCR vao EasyOCR (chay 1 lan)
+├── best_640.pt / best_320.pt                # model YOLOv8 phat hien bien so (cua ban)
+└── best_accuracy.pth                        # model OCR sau khi train
 ```
 
 Các file phục vụ train OCR (chỉ cần khi train lại): `split_dataset.py`, `convert_easyocr.py`, `run_train.py`, `patch_next.py`, `patch_index.py`, `patch_test.py`.
@@ -89,7 +89,7 @@ python main.py --source anh.jpg --weights best.pt --cpu
 | Tham số | Mặc định | Ý nghĩa |
 |---|---|---|
 | `--source` | (bắt buộc) | Đường dẫn ảnh hoặc video (`jpg png bmp webp`, `mp4 avi mov mkv wmv flv`) |
-| `--weights` | `best_640.pt \ best_320.pt` | Model YOLOv8 phát hiện biển số (imgsz 640 và 320) |
+| `--weights` | `best_640.pt` | Model YOLOv8 phát hiện biển số (imgsz 640), còn model `best_320.pt` có imgsz 320 |
 | `--out` | `output` | Thư mục kết quả |
 | `--imgsz` | `640` | Kích thước ảnh đưa vào YOLO |
 | `--conf` | `0.3` | Ngưỡng tin cậy của detector |
