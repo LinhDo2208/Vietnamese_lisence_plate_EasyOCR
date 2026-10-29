@@ -89,7 +89,7 @@ python main.py --source anh.jpg --weights best.pt --cpu
 | Tham số | Mặc định | Ý nghĩa |
 |---|---|---|
 | `--source` | (bắt buộc) | Đường dẫn ảnh hoặc video (`jpg png bmp webp`, `mp4 avi mov mkv wmv flv`) |
-| `--weights` | `best_640.pt` | Model YOLOv8 phát hiện biển số |
+| `--weights` | `best_640.pt \ best_320.pt` | Model YOLOv8 phát hiện biển số (imgsz 640 và 320) |
 | `--out` | `output` | Thư mục kết quả |
 | `--imgsz` | `640` | Kích thước ảnh đưa vào YOLO |
 | `--conf` | `0.3` | Ngưỡng tin cậy của detector |
